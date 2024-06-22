@@ -8,7 +8,7 @@ gfortran -g -c main.f90 -o main.o
 # Compile statically
 gfortran -g -Wl,--no-warn-execstack main.o -o main_static algorithm.o
 # Compile with shared lib
-gfortran -g main.o -o main_shared -Wl,-rpath,/prima/temp libalgorithm.so
+gfortran -g main.o -o main_shared -Wl,-rpath,$PWD ./libalgorithm.so
 
 # Run the program
 echo "Running statically compiled program..."
